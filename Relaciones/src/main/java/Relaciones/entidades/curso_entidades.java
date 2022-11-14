@@ -4,9 +4,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class curso_entidades {
+
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,12 +20,10 @@ public class curso_entidades {
 
 	public curso_entidades( String title) {
 		super();
-		
 		this.title = title;
 	} 
 	
 	public curso_entidades() {
-	
 	}
 
 	public long getId() {
@@ -42,8 +44,12 @@ public class curso_entidades {
 
 	@Override
 	public String toString() {
-		return "entidades [id=" + id + ", title=" + title + "]";
-	} 
+		return "curso_entidades [id=" + id + ", title=" + title + "]";
+	}
+
+
+
+	
 	
 	
 
