@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 import Relaciones.entidades.CourseMaterial;
-import Relaciones.entidades.curso_entidades;
+import Relaciones.entidades.Course;
 import Relaciones.repositorio.cursomateriales_repositorio;
 
 

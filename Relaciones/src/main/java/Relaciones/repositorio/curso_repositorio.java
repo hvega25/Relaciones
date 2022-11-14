@@ -4,11 +4,11 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import Relaciones.entidades.curso_entidades;
+import Relaciones.entidades.Course;
 
 
 
-public interface curso_repositorio extends CrudRepository<curso_entidades, Long> {
+public interface curso_repositorio extends CrudRepository<Course, Long> {
 	
-	public List<curso_entidades> findAll();
+	public List<Course> findAll();
 }

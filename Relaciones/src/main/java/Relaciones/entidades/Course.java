@@ -9,8 +9,13 @@ import javax.persistence.OneToOne;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-public class curso_entidades {
+public class Course {
 
+	/*@OneToOne
+	private CourseMaterial course;*/
+	
+	@OneToOne(mappedBy = "course")
+	private CourseMaterial courseMaterial;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,12 +23,14 @@ public class curso_entidades {
 	
 	private String title;
 
-	public curso_entidades( String title) {
-		super();
-		this.title = title;
-	} 
 	
-	public curso_entidades() {
+	public Course(CourseMaterial courseMaterial, String title) {
+		super();
+		this.courseMaterial = courseMaterial;
+		this.title = title;
+	}
+
+	public Course() { 
 	}
 
 	public long getId() {
@@ -47,11 +54,12 @@ public class curso_entidades {
 		return "curso_entidades [id=" + id + ", title=" + title + "]";
 	}
 
+	public CourseMaterial getCourseMaterial() {
+		return courseMaterial;
+	}
 
-
-	
-	
-	
-
+	public void setCourseMaterial(CourseMaterial courseMaterial) {
+		this.courseMaterial = courseMaterial;
+	}
 
 }

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import Relaciones.entidades.curso_entidades;
+import Relaciones.entidades.Course;
 import Relaciones.repositorio.curso_repositorio;
 
 
@@ -26,14 +26,14 @@ public class curso_controlador {
 	curso_repositorio cursoRep;
 	
 	@GetMapping("curso/{id}")
-	public curso_entidades getEntidades (@PathVariable long id) {
+	public Course getCursoID (@PathVariable long id) {
 		
 		return cursoRep.findById(id).get();
 	}
 	
 	
 	@GetMapping("curso")
-	public Iterable<curso_entidades> getCurso() {
+	public Iterable<Course> getCurso() {
 		
 		return cursoRep.findAll();
 	}

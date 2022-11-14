@@ -6,14 +6,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
-
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class CourseMaterial {
-
+	@JsonIgnore
 	@OneToOne
-	private curso_entidades course;
+	private Course course;
+	
+
 	
 	private String url;
 	
@@ -23,11 +24,14 @@ public class CourseMaterial {
 	private long id;
 
 
-	public CourseMaterial(String url) {
+	
+	public CourseMaterial(Course course, String url) {
 		super();
+		this.course = course;
 		this.url = url;
 	}
-	
+
+
 	public CourseMaterial() {
 		
 	}
@@ -54,20 +58,15 @@ public class CourseMaterial {
 		return "CourseMaterial [course=" + course + ", url=" + url + ", id=" + id + "]";
 	}
 
-	public curso_entidades getCourse() {
+	public Course getCourse() {
 		return course;
 	}
 
-	public void setCourse(curso_entidades course) {
+	public void setCourse(Course course) {
 		this.course = course;
 	}
 
-	
 
-
-	
-	
-	
 	
 	
 	
