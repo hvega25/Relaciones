@@ -1,5 +1,8 @@
 package Relaciones.controlador;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Table;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import Relaciones.entidades.Course;
+import Relaciones.entidades.CourseMaterial;
 import Relaciones.repositorio.curso_repositorio;
 
 
@@ -37,5 +41,7 @@ public class curso_controlador {
 		
 		return cursoRep.findAll();
 	}
+	
+
 
 }

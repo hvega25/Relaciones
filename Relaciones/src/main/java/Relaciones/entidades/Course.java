@@ -21,13 +21,13 @@ public class Course {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	private String title;
+	private String curso;
 
 	
-	public Course(CourseMaterial courseMaterial, String title) {
+	public Course(CourseMaterial courseMaterial, String curso) {
 		super();
 		this.courseMaterial = courseMaterial;
-		this.title = title;
+		this.curso = curso;
 	}
 
 	public Course() { 
@@ -41,17 +41,17 @@ public class Course {
 		this.id = id;
 	}
 
-	public String getTitle() {
-		return title;
+	public String getCurso() {
+		return curso;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public void setTitle(String curso) {
+		this.curso = curso;
 	}
 
 	@Override
 	public String toString() {
-		return "curso_entidades [id=" + id + ", title=" + title + "]";
+		return "curso_entidades [id=" + id + ", title=" + curso + "]";
 	}
 
 	public CourseMaterial getCourseMaterial() {
